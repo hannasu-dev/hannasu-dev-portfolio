@@ -15,8 +15,8 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
+            color: #4a4a4a;
+            background-color: #fff5f7;
         }
 
         .container {
@@ -31,8 +31,8 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 50px;
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-color: #ffffff;
+            box-shadow: 0 2px 15px rgba(255, 182, 193, 0.2);
             position: fixed;
             width: 100%;
             top: 0;
@@ -42,11 +42,11 @@
         .logo {
             font-size: 24px;
             font-weight: bold;
-            color: #333;
+            color: #4a4a4a;
         }
 
         .logo span {
-            color: #007bff;
+            color: #e91e63;
         }
 
         .nav-links {
@@ -57,13 +57,13 @@
 
         .nav-links a {
             text-decoration: none;
-            color: #333;
+            color: #4a4a4a;
             font-weight: 500;
             transition: color 0.3s;
         }
 
         .nav-links a:hover, .nav-links a.active {
-            color: #007bff;
+            color: #e91e63;
         }
 
         /* Sections */
@@ -75,7 +75,7 @@
             text-align: center;
             font-size: 36px;
             margin-bottom: 50px;
-            color: #333;
+            color: #e91e63;
         }
 
         /* Hero */
@@ -84,8 +84,8 @@
             align-items: center;
             justify-content: space-between;
             padding: 120px 50px 80px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, #ffe4e9 0%, #ffd6e0 100%);
+            color: #4a4a4a;
         }
 
         .hero-left {
@@ -99,7 +99,7 @@
             border-radius: 50%;
             object-fit: cover;
             border: 5px solid white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(233, 30, 99, 0.2);
         }
 
         .hero-right {
@@ -109,6 +109,7 @@
         .hero-name {
             font-size: 48px;
             margin: 20px 0;
+            color: #e91e63;
         }
 
         .hero-description {
@@ -120,7 +121,7 @@
         .btn {
             display: inline-block;
             padding: 12px 30px;
-            background-color: #007bff;
+            background-color: #e91e63;
             color: white;
             text-decoration: none;
             border-radius: 25px;
@@ -129,8 +130,19 @@
         }
 
         .btn:hover {
-            background-color: #0056b3;
+            background-color: #c2185b;
             transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid #e91e63;
+            color: #e91e63;
+        }
+
+        .btn-outline:hover {
+            background-color: #e91e63;
+            color: white;
         }
 
         .social-links {
@@ -138,7 +150,7 @@
         }
 
         .social-links a {
-            color: white;
+            color: #e91e63;
             font-size: 24px;
             margin-right: 20px;
             transition: transform 0.3s;
@@ -146,6 +158,7 @@
 
         .social-links a:hover {
             transform: translateY(-3px);
+            color: #c2185b;
         }
 
         /* About Section */
@@ -166,11 +179,12 @@
         .about-img {
             width: 100%;
             border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(233, 30, 99, 0.1);
         }
 
         .skills h3 {
             margin: 20px 0 15px;
+            color: #e91e63;
         }
 
         .skill-tags {
@@ -180,7 +194,8 @@
         }
 
         .skill-tag {
-            background-color: #e0e0e0;
+            background-color: #ffe4e9;
+            color: #e91e63;
             padding: 8px 20px;
             border-radius: 20px;
             font-size: 14px;
@@ -197,7 +212,7 @@
             background: white;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(233, 30, 99, 0.1);
             transition: transform 0.3s;
         }
 
@@ -214,6 +229,7 @@
         .portfolio-item h4 {
             padding: 20px 20px 10px;
             font-size: 20px;
+            color: #e91e63;
         }
 
         .portfolio-item p {
@@ -223,13 +239,20 @@
 
         .portfolio-links {
             padding: 0 20px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .portfolio-links a {
             display: inline-block;
-            margin-right: 15px;
-            color: #007bff;
+            color: #e91e63;
             text-decoration: none;
+            font-weight: 500;
+        }
+
+        .portfolio-links a:hover {
+            text-decoration: underline;
         }
 
         /* Resume Section */
@@ -241,7 +264,7 @@
 
         .resume-left h3, .resume-right h3 {
             margin-bottom: 20px;
-            color: #007bff;
+            color: #e91e63;
         }
 
         .experience-item, .education-item {
@@ -249,7 +272,7 @@
             padding: 20px;
             border-radius: 10px;
             margin-bottom: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(233, 30, 99, 0.05);
         }
 
         .company, .university {
@@ -259,7 +282,7 @@
         }
 
         .date {
-            color: #007bff;
+            color: #e91e63;
             font-size: 14px;
             margin-bottom: 10px;
         }
@@ -273,7 +296,7 @@
 
         .certifications li {
             padding: 8px 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #ffe4e9;
         }
 
         /* Contact Section */
@@ -292,7 +315,7 @@
         .contact-item i {
             width: 40px;
             font-size: 20px;
-            color: #007bff;
+            color: #e91e63;
         }
 
         .contact-form .form-group {
@@ -302,9 +325,27 @@
         .contact-form input, .contact-form textarea {
             width: 100%;
             padding: 12px;
-            border: 1px solid #ddd;
+            border: 1px solid #ffd6e0;
             border-radius: 5px;
             font-family: inherit;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: #e91e63;
+        }
+
+        .social-links-contact a {
+            color: #e91e63;
+            font-size: 24px;
+            margin-right: 15px;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        .social-links-contact a:hover {
+            transform: translateY(-3px);
+            color: #c2185b;
         }
 
         /* Responsive */
@@ -357,16 +398,16 @@
             <p class="intro">Hi, I'm</p>
             <h1 class="hero-name">Nurul Hanna</h1>
             <p class="hero-description">
-                IT Student @ UKM | Web Developer | Seeking Internship starting August 2026
+                IT Student @ UKM | Web & System Development Enthusiast | Seeking Internship starting August 2026
             </p>
             <div class="hero-buttons">
-                <a href="#" class="btn">Download CV</a>
-                <a href="#contact" class="btn">Contact</a>
+                <a href="Resume_Nurul Hanna_IT_Internship.pdf" download class="btn">Download Resume</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
             </div>
             <div class="social-links">
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/hannasu-dev" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/nurulhannasdy" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/hannasu-dev" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:nurulhannasuhaidy@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </section>
@@ -377,7 +418,7 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>I am a final-year Information Technology student at Universiti Kebangsaan Malaysia (UKM), passionate about web development and building digital solutions for real-world problems. My Final Year Project focuses on developing a Progressive Web App (PWA) for micro-entrepreneurs to digitize their business management.</p>
-                    <p>Throughout my studies, I've gained hands-on experience in web technologies including PHP, JavaScript, HTML/CSS, and database management with MySQL and Supabase. I've also explored ERP systems like Odoo and version control using Git & GitHub.</p>
+                    <p>I have hands-on experience in web technologies including PHP, JavaScript, HTML/CSS, as well as database management with MySQL and Supabase. I have also configured ERP systems like Odoo and use Git & GitHub for version control.</p>
                     <p>I am actively seeking an internship opportunity starting August 2026 where I can apply my skills, learn from industry professionals, and contribute to meaningful projects.</p>
                     <div class="skills">
                         <h3>Skills</h3>
@@ -405,40 +446,45 @@
         <div class="container">
             <h2 class="section-title">My Projects</h2>
             <div class="portfolio-grid">
+                <!-- Project 1: Portal Usahawan Digital (FYP) -->
                 <div class="portfolio-item">
                     <img src="images/portal-usahawan.jpg" alt="Portal Usahawan Digital" onerror="this.src='https://via.placeholder.com/350x200'">
                     <h4>Portal Usahawan Digital</h4>
-                    <p>PWA for micro-entrepreneurs featuring daily transaction tracking and automated PDF business report generation. Built with HTML, CSS, JavaScript, and Supabase backend.</p>
+                    <p>Final Year Project: A PWA for micro-entrepreneurs featuring daily transaction tracking and automated PDF business report generation. Built with HTML, CSS, JavaScript, and Supabase.</p>
                     <div class="portfolio-links">
-                        <a href="https://github.com/hannasu-dev/portal-usahawandigital" target="_blank">GitHub</a>
-                        <a href="#" target="_blank">Live Demo</a>
+                        <a href="https://github.com/hannasu-dev/portal-usahawandigital" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://portal-usahawandigital.vercel.app" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
+
+                <!-- Project 2: Smash Hub Ordering System -->
                 <div class="portfolio-item">
                     <img src="images/smashhub.jpg" alt="Smash Hub" onerror="this.src='https://via.placeholder.com/350x200'">
                     <h4>Smash Hub Ordering System</h4>
-                    <p>Responsive ordering system with role-based authentication (Admin/Non-Admin) and full CRUD operations. Built with PHP, JavaScript, and MySQL database.</p>
+                    <p>A responsive ordering system with role-based authentication (Admin/Non-Admin) and full CRUD operations. Built with PHP, JavaScript, and MySQL.</p>
                     <div class="portfolio-links">
-                        <a href="https://github.com/hannasu-dev/UKM-Web-Programming-Project" target="_blank">GitHub</a>
-                        <a href="#" target="_blank">Live Demo</a>
+                        <a href="https://github.com/hannasu-dev/UKM-Web-Programming-Project" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="http://lrgs.ftsm.ukm.my/users/a201739/myPT4/login.php" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
+
+                <!-- Project 3: Odoo Inventory Management -->
                 <div class="portfolio-item">
                     <img src="images/odoo.jpg" alt="Odoo Project" onerror="this.src='https://via.placeholder.com/350x200'">
                     <h4>Odoo Inventory Management</h4>
-                    <p>Configured Odoo ERP modules including Sales, POS, Bill of Materials, and Accounting to automate business workflows and improve inventory accuracy.</p>
+                    <p>Configured Odoo ERP modules including Sales, POS, Bill of Materials (BoM), and Accounting to automate business workflows and improve inventory accuracy.</p>
                     <div class="portfolio-links">
-                        <a href="#" target="_blank">GitHub</a>
-                        <a href="#" target="_blank">Live Demo</a>
+                        <!-- No GitHub and Live Demo -->
                     </div>
                 </div>
+
+                <!-- Project 4: Noir Bloom Business Website -->
                 <div class="portfolio-item">
                     <img src="images/wordpress.jpg" alt="WordPress" onerror="this.src='https://via.placeholder.com/350x200'">
                     <h4>Noir Bloom Business Website</h4>
-                    <p>WordPress business website with integrated ToyyibPay payment gateway for digital business operations. Managed content, UI customization, and payment integration.</p>
+                    <p>A WordPress business website with integrated ToyyibPay payment gateway for digital business operations. Content management, UI customization, and payment integration.</p>
                     <div class="portfolio-links">
-                        <a href="#" target="_blank">GitHub</a>
-                        <a href="#" target="_blank">Live Demo</a>
+                        <!-- No GitHub and Live Demo -->
                     </div>
                 </div>
             </div>
@@ -496,7 +542,7 @@
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <p>nurul.hanna@student.ukm.edu.my</p>
+                        <p>nurulhannasuhaidy@gmail.com</p>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
@@ -507,9 +553,9 @@
                         <p>Available for internship starting August 2026</p>
                     </div>
                     <div class="social-links-contact">
-                        <a href="https://github.com/hannasu-dev" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="mailto:nurul.hanna@student.ukm.edu.my" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://github.com/hannasu-dev" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/nurulhannasdy" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:nurulhannasuhaidy@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 <form class="contact-form">
