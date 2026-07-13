@@ -1,622 +1,623 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nurul Hanna | IT Student Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nurul Hanna | IT Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* ----- reset & base ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #4a4a4a;
+      background-color: #fff5f7;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #4a4a4a;
-            background-color: #fff5f7;
-        }
+    /* ----- navbar ----- */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 15px rgba(255, 182, 193, 0.2);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #4a4a4a;
+    }
+    .logo span {
+      color: #e91e63;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #4a4a4a;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #e91e63;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+    /* ----- sections ----- */
+    .section {
+      padding: 100px 0 80px;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 50px;
+      color: #e91e63;
+    }
 
-        /* Navbar */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background-color: #ffffff;
-            box-shadow: 0 2px 15px rgba(255, 182, 193, 0.2);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
+    /* ----- hero ----- */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 120px 50px 80px;
+      background: linear-gradient(135deg, #ffe4e9 0%, #ffd6e0 100%);
+      color: #4a4a4a;
+      flex-wrap: wrap;
+    }
+    .hero-left {
+      flex: 1;
+      text-align: center;
+      min-width: 280px;
+    }
+    .profile-img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid white;
+      box-shadow: 0 10px 30px rgba(233, 30, 99, 0.2);
+    }
+    .hero-right {
+      flex: 1;
+      min-width: 280px;
+      padding: 20px 0;
+    }
+    .hero-name {
+      font-size: 48px;
+      margin: 10px 0 10px;
+      color: #e91e63;
+    }
+    .hero-description {
+      font-size: 18px;
+      margin-bottom: 25px;
+      opacity: 0.9;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background-color: #e91e63;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      margin-right: 15px;
+      transition: transform 0.3s, background-color 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #c2185b;
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid #e91e63;
+      color: #e91e63;
+    }
+    .btn-outline:hover {
+      background-color: #e91e63;
+      color: white;
+    }
+    .social-links {
+      margin-top: 30px;
+    }
+    .social-links a {
+      color: #e91e63;
+      font-size: 24px;
+      margin-right: 20px;
+      transition: transform 0.3s;
+      display: inline-block;
+    }
+    .social-links a:hover {
+      transform: translateY(-3px);
+      color: #c2185b;
+    }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #4a4a4a;
-        }
+    /* ----- about ----- */
+    .about-content {
+      display: flex;
+      gap: 50px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .about-text {
+      flex: 1;
+      min-width: 280px;
+    }
+    .about-text p {
+      margin-bottom: 18px;
+    }
+    .about-img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(233, 30, 99, 0.1);
+    }
+    .skills h3 {
+      margin: 25px 0 15px;
+      color: #e91e63;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .skill-tag {
+      background-color: #ffe4e9;
+      color: #e91e63;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
 
-        .logo span {
-            color: #e91e63;
-        }
+    /* ----- projects ----- */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .portfolio-item {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(233, 30, 99, 0.1);
+      transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .portfolio-item:hover {
+      transform: translateY(-5px);
+    }
+    .portfolio-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background: #ffe4e9;
+    }
+    .portfolio-item h4 {
+      padding: 20px 20px 8px;
+      font-size: 20px;
+      color: #e91e63;
+    }
+    .portfolio-item p {
+      padding: 0 20px 12px;
+      color: #555;
+      flex: 1;
+    }
+    .portfolio-links {
+      padding: 0 20px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .portfolio-links a {
+      color: #e91e63;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .portfolio-links a:hover {
+      text-decoration: underline;
+    }
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
+    /* ----- resume ----- */
+    .resume-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .resume-left h3,
+    .resume-right h3 {
+      margin-bottom: 20px;
+      color: #e91e63;
+    }
+    .experience-item,
+    .education-item {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(233, 30, 99, 0.05);
+    }
+    .company,
+    .university {
+      color: #666;
+      font-weight: 500;
+      margin: 5px 0;
+    }
+    .date {
+      color: #e91e63;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .certifications {
+      list-style: none;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(233, 30, 99, 0.05);
+    }
+    .certifications li {
+      padding: 8px 0;
+      border-bottom: 1px solid #ffe4e9;
+    }
+    .certifications li:last-child {
+      border-bottom: none;
+    }
 
-        .nav-links a {
-            text-decoration: none;
-            color: #4a4a4a;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
+    /* ----- contact ----- */
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .contact-item i {
+      width: 40px;
+      font-size: 20px;
+      color: #e91e63;
+    }
+    .contact-message {
+      background: #ffe4e9;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .contact-message i {
+      font-size: 48px;
+      color: #e91e63;
+      margin-bottom: 15px;
+    }
+    .contact-message h3 {
+      color: #e91e63;
+      margin-bottom: 15px;
+    }
+    .contact-message a {
+      color: #e91e63;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-message a:hover {
+      text-decoration: underline;
+    }
+    .social-links-contact a {
+      color: #e91e63;
+      font-size: 26px;
+      margin-right: 18px;
+      display: inline-block;
+      transition: transform 0.3s;
+    }
+    .social-links-contact a:hover {
+      transform: translateY(-3px);
+      color: #c2185b;
+    }
 
-        .nav-links a:hover, .nav-links a.active {
-            color: #e91e63;
-        }
-
-        /* Sections */
-        .section {
-            padding: 100px 0 80px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 50px;
-            color: #e91e63;
-        }
-
-        /* Hero */
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 120px 50px 80px;
-            background: linear-gradient(135deg, #ffe4e9 0%, #ffd6e0 100%);
-            color: #4a4a4a;
-        }
-
-        .hero-left {
-            flex: 1;
-            text-align: center;
-        }
-
-        .profile-img {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid white;
-            box-shadow: 0 10px 30px rgba(233, 30, 99, 0.2);
-        }
-
-        .hero-right {
-            flex: 1;
-        }
-
-        .hero-name {
-            font-size: 48px;
-            margin: 20px 0;
-            color: #e91e63;
-        }
-
-        .hero-description {
-            font-size: 18px;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: #e91e63;
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            margin-right: 15px;
-            transition: transform 0.3s, background-color 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: #c2185b;
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid #e91e63;
-            color: #e91e63;
-        }
-
-        .btn-outline:hover {
-            background-color: #e91e63;
-            color: white;
-        }
-
-        .social-links {
-            margin-top: 30px;
-        }
-
-        .social-links a {
-            color: #e91e63;
-            font-size: 24px;
-            margin-right: 20px;
-            transition: transform 0.3s;
-        }
-
-        .social-links a:hover {
-            transform: translateY(-3px);
-            color: #c2185b;
-        }
-
-        /* About Section */
-        .about-content {
-            display: flex;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .about-text p {
-            margin-bottom: 20px;
-        }
-
-        .about-img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(233, 30, 99, 0.1);
-        }
-
-        .skills h3 {
-            margin: 20px 0 15px;
-            color: #e91e63;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill-tag {
-            background-color: #ffe4e9;
-            color: #e91e63;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 14px;
-        }
-
-        /* Projects Section */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-
-        .portfolio-item {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(233, 30, 99, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .portfolio-item h4 {
-            padding: 20px 20px 10px;
-            font-size: 20px;
-            color: #e91e63;
-        }
-
-        .portfolio-item p {
-            padding: 0 20px 15px;
-            color: #666;
-        }
-
-        .portfolio-links {
-            padding: 0 20px 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .portfolio-links a {
-            display: inline-block;
-            color: #e91e63;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .portfolio-links a:hover {
-            text-decoration: underline;
-        }
-
-        /* Resume Section */
-        .resume-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-
-        .resume-left h3, .resume-right h3 {
-            margin-bottom: 20px;
-            color: #e91e63;
-        }
-
-        .experience-item, .education-item {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 10px rgba(233, 30, 99, 0.05);
-        }
-
-        .company, .university {
-            color: #666;
-            font-weight: 500;
-            margin: 5px 0;
-        }
-
-        .date {
-            color: #e91e63;
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
-
-        .certifications {
-            list-style: none;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .certifications li {
-            padding: 8px 0;
-            border-bottom: 1px solid #ffe4e9;
-        }
-
-        /* Contact Section */
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .contact-item i {
-            width: 40px;
-            font-size: 20px;
-            color: #e91e63;
-        }
-
-        .contact-message {
-            background: #ffe4e9;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .contact-message i {
-            font-size: 48px;
-            color: #e91e63;
-            margin-bottom: 15px;
-        }
-
-        .contact-message h3 {
-            color: #e91e63;
-            margin-bottom: 15px;
-        }
-
-        .contact-message a {
-            color: #e91e63;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .contact-message a:hover {
-            text-decoration: underline;
-        }
-
-        .social-links-contact a {
-            color: #e91e63;
-            font-size: 24px;
-            margin-right: 15px;
-            display: inline-block;
-            transition: transform 0.3s;
-        }
-
-        .social-links-contact a:hover {
-            transform: translateY(-3px);
-            color: #c2185b;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                padding: 15px;
-            }
-            .nav-links {
-                margin-top: 15px;
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .hero {
-                flex-direction: column;
-                padding: 150px 20px 60px;
-                text-align: center;
-            }
-            .hero-name {
-                font-size: 32px;
-            }
-            .about-content, .resume-content, .contact-content {
-                flex-direction: column;
-                grid-template-columns: 1fr;
-            }
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    /* ----- responsive ----- */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        padding: 15px 20px;
+      }
+      .nav-links {
+        margin-top: 12px;
+        gap: 15px;
+        justify-content: center;
+      }
+      .hero {
+        flex-direction: column;
+        padding: 150px 20px 60px;
+        text-align: center;
+      }
+      .hero-name {
+        font-size: 34px;
+      }
+      .about-content,
+      .resume-content,
+      .contact-content {
+        grid-template-columns: 1fr;
+      }
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+      .resume-content {
+        gap: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo"><span>N</span>urul Hanna</div>
-        <ul class="nav-links">
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Projects</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+  <nav class="navbar">
+    <div class="logo"><span>N</span>urul Hanna</div>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#portfolio">Projects</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    <section class="hero" id="home">
-        <div class="hero-left">
-            <img src="images/profilehanna.jpg" alt="Profile" class="profile-img" onerror="this.src='https://via.placeholder.com/300'">
-        </div>
-        <div class="hero-right">
-            <p class="intro">Hi, I'm</p>
-            <h1 class="hero-name">Nurul Hanna</h1>
-            <p class="hero-description">
-                IT Student @ UKM | Web & System Development Enthusiast | Seeking Internship starting August 2026
-            </p>
-            <div class="hero-buttons">
-                <a href="NURUL HANNA_IT INTERNSHIP_RESUME.pdf" download class="btn">Download Resume</a>
-                <a href="#contact" class="btn btn-outline">Contact Me</a>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-left">
+      <img src="images/profilehanna.jpg" alt="Nurul Hanna" class="profile-img" onerror="this.src='https://via.placeholder.com/280/ffe4e9/e91e63?text=Nurul+Hanna'">
+    </div>
+    <div class="hero-right">
+      <p class="intro">Hi, I'm</p>
+      <h1 class="hero-name">Nurul Hanna</h1>
+      <p class="hero-description">
+        IT Student @ UKM · Web & System Development · <br>
+        <strong>Seeking 20-week Software Testing/QA or App Dev internship starting August 2026</strong>
+      </p>
+      <div class="hero-buttons">
+        <a href="NURUL_HANNA_IT_INTERNSHIP_RESUME.pdf" download class="btn">Download Resume</a>
+        <a href="#contact" class="btn btn-outline">Contact</a>
+      </div>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/nurulhannasdy" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/hannasu-dev" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nurulhannasuhaidy@gmail.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p><strong>Final-year IT student</strong> (UKM) with CGPA 3.58, Dean's List (3 semesters). Hands-on experience in full-stack web development, manual & functional testing, and ERP configuration. Passionate about building digital solutions for real-world problems.</p>
+          <p>My Final Year Project — <strong>Portal UsahawanDigital</strong> — is a PWA for micro-entrepreneurs, featuring transaction tracking, automated PDF reports, and secure backend with Supabase. I executed 17 functional test cases, resolved critical bugs, and achieved an 80.5/100 SUS score.</p>
+          <p>I have configured <strong>Odoo ERP</strong> (Sales, POS, BoM, Accounting) and developed a WordPress site with ToyyibPay integration. Proficient in PHP, JavaScript, MySQL, Supabase, Git, and testing fundamentals (Postman, manual testing).</p>
+          <p><strong>Actively seeking a 20-week internship (Aug/Sep 2026)</strong> in Software Testing/QA or Application Development.</p>
+          <div class="skills">
+            <h3>Core Skills</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">HTML/CSS</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">PHP</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">Supabase</span>
+              <span class="skill-tag">Git/GitHub</span>
+              <span class="skill-tag">Vercel</span>
+              <span class="skill-tag">Odoo ERP</span>
+              <span class="skill-tag">PWA</span>
+              <span class="skill-tag">Manual Testing</span>
+              <span class="skill-tag">Postman</span>
+              <span class="skill-tag">Kotlin</span>
+              <span class="skill-tag">Firebase</span>
             </div>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/nurulhannasdy" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/hannasu-dev" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nurulhannasuhaidy@gmail.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            </div>
+          </div>
         </div>
-    </section>
-
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I am a final-year Information Technology student at Universiti Kebangsaan Malaysia (UKM), passionate about web development and building digital solutions for real-world problems. My Final Year Project focuses on developing a Progressive Web App (PWA) for micro-entrepreneurs to digitize their business management.</p>
-                    <p>I have hands-on experience in web technologies including PHP, JavaScript, HTML/CSS, as well as database management with MySQL and Supabase. I have also configured ERP systems like Odoo and use Git & GitHub for version control.</p>
-                    <p>I am actively seeking an internship opportunity starting August 2026 where I can apply my skills, learn from industry professionals, and contribute to meaningful projects.</p>
-                    <div class="skills">
-                        <h3>Skills</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">HTML/CSS</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">PHP</span>
-                            <span class="skill-tag">MySQL</span>
-                            <span class="skill-tag">Supabase</span>
-                            <span class="skill-tag">Git/GitHub</span>
-                            <span class="skill-tag">Vercel</span>
-                            <span class="skill-tag">Odoo ERP</span>
-                            <span class="skill-tag">PWA</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <img src="images/coding.jpg" alt="Coding" class="about-img" onerror="this.src='https://via.placeholder.com/400x300'">
-                </div>
-            </div>
+        <div class="about-image">
+          <img src="images/coding.jpg" alt="Coding" class="about-img" onerror="this.src='https://via.placeholder.com/400x300/ffe4e9/e91e63?text=Code+%26+Build'">
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="portfolio" class="section">
-        <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <div class="portfolio-grid">
-                <!-- Project 1: Portal Usahawan Digital (FYP) -->
-                <div class="portfolio-item">
-                    <img src="images/portal-usahawan.png" alt="Portal Usahawan Digital" onerror="this.src='https://via.placeholder.com/350x200/ffe4e9/e91e63?text=Portal+Usahawan'">
-                    <h4>Portal Usahawan Digital</h4>
-                    <p>Final Year Project: A PWA for micro-entrepreneurs featuring daily transaction tracking and automated PDF business report generation. Built with HTML, CSS, JavaScript, and Supabase.</p>
-                    <div class="portfolio-links">
-                        <a href="https://github.com/hannasu-dev/portal-usahawandigital" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        <!--<a href="https://portal-usahawandigital.vercel.app" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>-->
-                    </div>
-                </div>
-
-                <!-- Project 2: Smash Hub Ordering System -->
-                <div class="portfolio-item">
-                    <img src="images/smashhub.png" alt="Smash Hub" onerror="this.src='https://via.placeholder.com/350x200/ffe4e9/e91e63?text=Smash+Hub'">
-                    <h4>Smash Hub Ordering System</h4>
-                    <p>A responsive ordering system with role-based authentication (Admin/Non-Admin) and full CRUD operations. Built with PHP, JavaScript, and MySQL.</p>
-                    <div class="portfolio-links">
-                        <a href="https://github.com/hannasu-dev/UKM-Web-Programming-Project" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        <!--<a href="http://lrgs.ftsm.ukm.my/users/a201739/myPT4/login.php" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>-->
-                    </div>
-                </div>
-
-                <!-- Project 3: Odoo Inventory Management -->
-                <div class="portfolio-item">
-                    <img src="images/odoo.png" alt="Odoo Project" onerror="this.src='https://via.placeholder.com/350x200/ffe4e9/e91e63?text=Odoo+ERP'">
-                    <h4>Odoo Inventory Management</h4>
-                    <p>Configured Odoo ERP modules including Sales, POS, Bill of Materials (BoM), and Accounting to automate business workflows and improve inventory accuracy.</p>
-                    <div class="portfolio-links">
-                        <!-- No GitHub and Live Demo -->
-                    </div>
-                </div>
-
-                <!-- Project 4: Noir Bloom Business Website -->
-                <div class="portfolio-item">
-                    <img src="images/wordpress.png" alt="WordPress" onerror="this.src='https://via.placeholder.com/350x200/ffe4e9/e91e63?text=Noir+Bloom'">
-                    <h4>Noir Bloom Business Website</h4>
-                    <p>A WordPress business website with integrated ToyyibPay payment gateway for digital business operations. Content management, UI customization, and payment integration.</p>
-                    <div class="portfolio-links">
-                        <!-- No GitHub and Live Demo -->
-                    </div>
-                </div>
-            </div>
+  <!-- PROJECTS (aligned with resume) -->
+  <section id="portfolio" class="section">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="portfolio-grid">
+        <!-- 1. Portal UsahawanDigital (FYP) -->
+        <div class="portfolio-item">
+          <img src="images/portal-usahawan.png" alt="Portal UsahawanDigital" onerror="this.src='https://via.placeholder.com/350x180/ffe4e9/e91e63?text=Portal+Usahawan'">
+          <h4>Portal UsahawanDigital</h4>
+          <p><strong>FYP</strong> – PWA for micro-entrepreneurs. Core sales module, automated PDF reports. 17 test cases (70.6% initial pass → zero critical bugs). SUS 80.5/100 (Grade B). Built with HTML, CSS, JS, Supabase, Vercel.</p>
+          <div class="portfolio-links">
+            <a href="https://github.com/hannasu-dev/portal-usahawandigital" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          </div>
         </div>
-    </section>
-
-    <section id="resume" class="section">
-        <div class="container">
-            <h2 class="section-title">Resume</h2>
-            <div class="resume-content">
-                <div class="resume-left">
-                    <h3>Experience</h3>
-                    <div class="experience-item">
-                        <h4>Student Advisor</h4>
-                        <p class="company">Programming Club, FTSM UKM</p>
-                        <p class="date">2024 - Present</p>
-                        <p>Provide technical mentorship to committee members, manage long-term activity sustainability planning, and resolve internal conflicts to ensure operational continuity.</p>
-                    </div>
-                    <div class="experience-item">
-                        <h4>Treasurer</h4>
-                        <p class="company">Programming Club, FTSM UKM</p>
-                        <p class="date">Oct 2024 - July 2025</p>
-                        <p>Managed club fund disbursements, maintained cash flow records for audit compliance, and received Certificate of Appreciation for outstanding financial management.</p>
-                    </div>
-                    <h3>Certifications</h3>
-                    <ul class="certifications">
-                        <li>Red Hat System Administration I (RH124) - March 2026</li>
-                        <li>Red Hat System Administration I (RH134) - June 2026</li>
-                        <li>Introduction to ARM On-Demand Training - March 2026</li>
-                        <li>ASEM Chip Start 2.0 - June 2026</li>
-                        <li>Dean's List Award (3 semesters)</li>
-                    </ul>
-                </div>
-                <div class="resume-right">
-                    <h3>Education</h3>
-                    <div class="education-item">
-                        <h4>Bachelor of Information Technology with Honours</h4>
-                        <p class="university">Universiti Kebangsaan Malaysia (UKM)</p>
-                        <p class="date">2023 - Present</p>
-                        <p>Dean's List Award (3 semesters) | MUET Band 4</p>
-                    </div>
-                    <div class="education-item">
-                        <h4>Physical Science</h4>
-                        <p class="university">Kolej Matrikulasi Pulau Pinang</p>
-                        <p class="date">2022 - 2023</p>
-                        <p>CGPA: 3.42</p>
-                    </div>
-                </div>
-            </div>
+        <!-- 2. Smash Hub Ordering System -->
+        <div class="portfolio-item">
+          <img src="images/smashhub.png" alt="Smash Hub" onerror="this.src='https://via.placeholder.com/350x180/ffe4e9/e91e63?text=Smash+Hub'">
+          <h4>Smash Hub Ordering System</h4>
+          <p>Web-based inventory & transaction system with role-based access (Admin/Staff). Manual DB verification via phpMyAdmin, DataTables pagination. PHP, MySQL, Bootstrap.</p>
+          <div class="portfolio-links">
+            <a href="https://github.com/hannasu-dev/UKM-Web-Programming-Project" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          </div>
         </div>
-    </section>
-
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Contact Me</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>nurulhannasuhaidy@gmail.com</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Bangi, Selangor, Malaysia</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <p>Available for internship starting August 2026</p>
-                    </div>
-                    <div class="social-links-contact">
-                        <a href="https://github.com/hannasu-dev" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/nurulhannasdy" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nurulhannasuhaidy@gmail.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-                <div class="contact-message">
-                    <i class="fas fa-envelope"></i>
-                    <h3>Get in Touch</h3>
-                    <p>Feel free to email me directly at:</p>
-                    <p><strong>nurulhannasuhaidy@gmail.com</strong></p>
-                    <p style="margin-top: 15px;">Or connect with me on <a href="https://www.linkedin.com/in/nurulhannasdy" target="_blank">LinkedIn</a>.</p>
-                </div>
-            </div>
+        <!-- 3. Odoo Inventory Management -->
+        <div class="portfolio-item">
+          <img src="images/odoo.png" alt="Odoo ERP" onerror="this.src='https://via.placeholder.com/350x180/ffe4e9/e91e63?text=Odoo+ERP'">
+          <h4>Odoo Inventory Management</h4>
+          <p>Configured Odoo modules: Sales, POS, Bill of Materials (BoM), Accounting. Automated reordering rules, improved inventory accuracy, prevented stockouts.</p>
+          <div class="portfolio-links">
+            <!-- no links -->
+          </div>
         </div>
-    </section>
+        <!-- 4. Noir Bloom Business Website -->
+        <div class="portfolio-item">
+          <img src="images/wordpress.png" alt="Noir Bloom" onerror="this.src='https://via.placeholder.com/350x180/ffe4e9/e91e63?text=Noir+Bloom'">
+          <h4>Noir Bloom Business Website</h4>
+          <p>WordPress business site with ToyyibPay payment integration. Customized UI for brand cohesion, streamlined secure checkout.</p>
+          <div class="portfolio-links">
+            <!-- no links -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
+  <!-- RESUME (full details from PDF) -->
+  <section id="resume" class="section">
+    <div class="container">
+      <h2 class="section-title">Resume</h2>
+      <div class="resume-content">
+        <div class="resume-left">
+          <h3>Experience & Leadership</h3>
+          <div class="experience-item">
+            <h4>Student Advisor</h4>
+            <p class="company">Programming Club, FTSM UKM</p>
+            <p class="date">2025 – July 2026</p>
+            <p>Technical mentorship to committee members, long-term activity planning, conflict resolution.</p>
+          </div>
+          <div class="experience-item">
+            <h4>Secretary | Escape Room Program</h4>
+            <p class="company">iSTAR UKM</p>
+            <p class="date">July 2025</p>
+            <p>Authored project proposals, managed documentation, coordinated technical units and participant engagement as Game Facilitator.</p>
+          </div>
+          <div class="experience-item">
+            <h4>Treasurer</h4>
+            <p class="company">Programming Club, FTSM UKM</p>
+            <p class="date">Oct 2024 – July 2025</p>
+            <p>Managed club finances, maintained cash flow records. Received Certificate of Appreciation for outstanding financial management.</p>
+          </div>
+          <div class="experience-item">
+            <h4>Facilitator & Program Committee</h4>
+            <p class="company">Web Dev Crash Course / Hour of Code</p>
+            <p class="date">May 2024 / Dec 2023</p>
+            <p>Guided XAMPP & HTML/CSS debugging; facilitated Scratch sessions for computational logic.</p>
+          </div>
 
-        // Active nav link highlighting
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
+          <h3 style="margin-top: 30px;">Certifications</h3>
+          <ul class="certifications">
+            <li><strong>Red Hat System Administration I (RH124)</strong> – March 2026</li>
+            <li><strong>Red Hat System Administration II (RH134)</strong> – June 2026</li>
+            <li>Introduction to ARM On-Demand Training – March 2026</li>
+            <li>ASEM Chip Start 2.0 – June 2026</li>
+            <li>Dean's List Award (Sem 1 2025/2026, Sem 1 & 2 2024/2025)</li>
+            <li>Certificate of Appreciation (Treasurer) – Programming Club 2024/2025</li>
+          </ul>
+        </div>
+
+        <div class="resume-right">
+          <h3>Education</h3>
+          <div class="education-item">
+            <h4>Bachelor of Information Technology (Hons)</h4>
+            <p class="university">Universiti Kebangsaan Malaysia (UKM)</p>
+            <p class="date">2023 – Present · CGPA: 3.58</p>
+            <p>Dean's List (3 semesters) · MUET Band 4</p>
+          </div>
+          <div class="education-item">
+            <h4>Physical Science</h4>
+            <p class="university">Kolej Matrikulasi Pulau Pinang</p>
+            <p class="date">2022 – 2023 · CGPA: 3.42</p>
+          </div>
+
+          <h3 style="margin-top: 30px;">Languages & Tools</h3>
+          <ul class="certifications" style="list-style: none; padding-left: 0;">
+            <li><strong>Languages:</strong> English (Highly proficient), Malay (Native)</li>
+            <li><strong>Tools:</strong> Vercel, GitHub, VS Code, Red Hat Linux, Unity, AutoCAD, Google Workspace, Canva</li>
+            <li><strong>Testing:</strong> Manual Testing, Functional Testing, API Testing (Postman)</li>
+            <li><strong>Mobile:</strong> Kotlin, Firebase</li>
+          </ul>
+
+          <h3 style="margin-top: 30px;">Reference</h3>
+          <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(233,30,99,0.05);">
+            <p><strong>Dr. Hazura Mohamed</strong><br>Senior Lecturer, FTSM UKM<br>hazura.mohamed@ukm.edu.my<br>+603-89216655</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title">Contact Me</h2>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <p>nurulhannasuhaidy@gmail.com</p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>Bangi, Selangor, Malaysia</p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-calendar-alt"></i>
+            <p><strong>Available for internship:</strong> August / September 2026</p>
+          </div>
+          <div class="social-links-contact">
+            <a href="https://github.com/hannasu-dev" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/nurulhannasdy" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nurulhannasuhaidy@gmail.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="contact-message">
+          <i class="fas fa-paper-plane"></i>
+          <h3>Let's Connect</h3>
+          <p>I'm open to internship opportunities in <strong>Software Testing/QA</strong> or <strong>Application Development</strong> starting August 2026.</p>
+          <p style="margin: 15px 0;">Email me directly:</p>
+          <p><strong>nurulhannasuhaidy@gmail.com</strong></p>
+          <p style="margin-top: 15px;">Or connect on <a href="https://www.linkedin.com/in/nurulhannasdy" target="_blank">LinkedIn</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // active nav link
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('.nav-links a');
+      let current = '';
+      sections.forEach(section => {
+        const top = section.offsetTop - 120;
+        if (pageYOffset >= top) current = section.getAttribute('id');
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
